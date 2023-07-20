@@ -1,0 +1,54 @@
+{% extends "about.html" %}
+{% block title %}Downloads{% endblock %}
+{% block main %}
+  <main id="main">
+
+    <!-- ======= Our Portfolio Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Downloads</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Downloads</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Portfolio Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section class="portfolio">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-web">Prospectus</li>
+          </div>
+        </div>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+          {% for x in downloads %}
+				  {% if x.file_name %}
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-web">
+            <div class="portfolio-item">
+              <img src="{{ url_for('static', filename='img/downloads/' + x.image_name) }}" style="height: 450px; width: auto;" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3>Prospectus 2022-2023</h3>
+                <div>
+                  <a href="{{ url_for('static', filename='img/downloads/' + x.image_name) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="View Image"><i class="bx bx-fullscreen"></i></a>
+                  <a href="{{ url_for('static', filename='img/downloads/' + x.file_name) }}" title="Download"><i class="bx bx-download"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+
+    </section><!-- End Portfolio Section -->
+
+  </main><!-- End #main -->
+  {% endblock %}

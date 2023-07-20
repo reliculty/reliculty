@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+  />
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+  />
+
+  <title>{% block title %}SJC{% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="/index"><span style="width: 13%; float: left;"><img src="static/img/logo.png" alt="" class="img-fluid"></span><span style="width: 87%; float: right; color: skyblue">Sahyajyothi Arts & Science College, Kumily</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/index">Home</a></li>
+          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/administration">Administration</a></li>
+              <li><a href="/downloads">Downloads</a></li>
+              <li><a href="/nss">NSS</a></li>
+            </ul>
+          </li>
+		  <li><a href="/news">News & Events</a></li>
+          <li class="dropdown"><a href="#"><span>Academics</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/programmes">Programmes</a></li>
+              <li><a href="/departments">Departments</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Admission</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/ugadmission">UG Admissions</a></li>
+              <li><a href="/pgadmission">PG Admissions</a></li>
+              <li><a href="/fees">Fees Structure</a></li>
+            </ul>
+          </li>
+          <li><a href="/iqac">IQAC</a></li>
+          <li class="dropdown"><a href="#"><span>Logins</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/login">Login</a></li>
+            </ul>
+          </li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-cntent-center align-items-center">
+    <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>SAHYAJYOTHI</span></h2>
+          <h3 class="animate__animated animate__fadeInDown"  style="color: white;">DREAM BIG, AIM HIGH, THINK SAHYAJYOTHI</span></h3>
+          <p class="animate__animated animate__fadeInUp">A Catholic Institution, Aiming at Education since 2014</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">OUR MISSION</h2>
+          <p class="animate__animated animate__fadeInUp">We, in Sahyajyothi strive to ensure essential skills for a successful career-intellectual competence, inquisitiveness and critical thinking; to teach true human values that would make learners charitable, hardworking and disciplined human beings; to build strength of character, self-respect, self-confidence and far sightedness and to provide necessary support and encourage -ment to the weak and the marginalized people of rural regions. All these objectives and goals are based on the love of God and service to mankind as revealed by Jesus Christ so as to send the intellectually retightened and minds to make a distinctive difference in the society for nation-building.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">OUR VISION</h2>
+          <p class="animate__animated animate__fadeInUp">We envision to transform this institution to a premium institution of higher learning and a pinnacle of excellence and to mould the youth of the country into selfless citizens of our great democracy. Our attempts are to evolve good human beings, competent professionals and people who lead a successful and joyful life. Our efforts are to lead persons in faith, tolerance and compassion and to open up the path to attain integrity and human wholeness the impacting of the knowledge is thoroughly through a holistic catholic education process.</p>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bx-building"></i></div>
+              <h4 class="title"><a href="">Affiliation</a></h4>
+              <p class="description">Sahyajyothi College is affiliated with Mahatma Gandhi University, which is a state university located in Kottayam, Kerala, India.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bx-location-plus"></i></div>
+              <h4 class="title"><a href="">Location</a></h4>
+              <p class="description">Sahyajyothi College is located in Kumily, which is a town in the Idukki district of Kerala, India.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="bx bx-user-circle"></i></div>
+              <h4 class="title"><a href="">Faculty</a></h4>
+              <p class="description">We have a dedicated and experienced faculty team who are committed to providing high-quality education to their students.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="">Extra-Curricular Activities</a></h4>
+              <p class="description">The college has facilities for outdoor sports such as basketball and badminton. The cultural events include festivals, music and dance competitions.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6 video-box">
+            <img src="static/img/why-us.jpg" class="img-fluid" alt="">
+            <a href="https://youtu.be/iG2OBDTp-8I" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-medal"></i></div>
+              <h4 class="title"><a href="">First & Best</a></h4>
+              <p class="description">Sahyajyothi is the first and best Arts and Science college in Idukki.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-book-heart"></i></div>
+              <h4 class="title"><a href="">Learn to live</a></h4>
+              <p class="description">Rather than teaching syllabus to students, Sahyajyothi disseminates the art of living to their students so as to ensure that every parent will get a good human in their children rather than getting a simple degree holder..</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Features</h2>
+          <p></p>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="static/img/features-1.jpeg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4">
+            <h3>Quality education and excellent academic standards.</h3>
+            <p class="fst-italic">
+              Sahyajyothi Arts and Science College is known for providing quality education to students. The college has highly qualified faculty members who are experts in their respective fields. They use innovative teaching methods and technology to provide students with a stimulating learning environment. The college has also implemented a continuous evaluation system to assess the performance of students and provide them with feedback and support to improve their academic performance.
+            </p>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="static/img/features-2.jpeg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Modern infrastructure and facilities</h3>
+            <p class="fst-italic">
+              The college has modern infrastructure and facilities to provide students with a comfortable and conducive learning environment. The college has spacious classrooms, well-equipped laboratories, a well-stocked library, and modern computer labs. The college also provides various sports facilities, including a gymnasium, football ground, basketball court, and volleyball court.
+            </p>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="static/img/features-3.jpeg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5">
+            <h3>Career guidance and placement assistance</h3>
+            <p>Sahyajyothi Arts and Science College has a dedicated placement cell that provides career guidance and placement assistance to students. The cell conducts training sessions, workshops, and seminars to prepare students for job interviews and recruitments. The college has a good track record of placements, with many of its students being recruited by top companies in India and abroad.</p>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="static/img/features-4.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Holistic development and extracurricular activities</h3>
+            <p class="fst-italic">
+              Sahyajyothi Arts and Science College believes in the overall development of students and encourages them to participate in co-curricular and extracurricular activities. The college provides various opportunities for students to showcase their talents and develop their skills. The college organizes various cultural events, seminars, workshops, and sports competitions that help students develop their leadership, teamwork, and communication skills. Additionally, the college encourages students to participate in various community service initiatives to promote social responsibility and civic engagement.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/index">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/news">News & Events</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/ugadmission">Admission</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/login">Login</a></li>
+            </ul>
+          </div>
+
+          
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              	First Mile,<br>
+		Kumily (P.O),<br>
+		Idukki District,<br>
+		Kerala – 685509 <br><br>
+              <strong>Telephone:</strong>  04869 222085<br>
+              <strong>Phone:</strong>  +91 8111955105<br>
+              <strong>Email:</strong> sahyajyothicollege@gmail.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>About Sahyajyothi</h3>
+            <p>Sahyajyothi Arts and Science College Kumily, Idukki is the first arts and science college started by Malankara Catholic Archdiocese of Thiruvalla. The college aspires to serve higher educational aspirations to the people of Highrange region.</p>
+            <div class="social-links mt-3">
+              <a href="https://www.facebook.com/Sahyajyothi/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/sahyajyothi/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.youtube.com/@sahyajyothiartsandsciencec2658" class="youtube"><i class="bx bxl-youtube"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; 2023 <strong><span>SAHYAJYOTHI ARTS AND SCIENCE COLLEGE.</span></strong> All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="">Jonah Satheesh</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>

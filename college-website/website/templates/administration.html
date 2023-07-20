@@ -1,0 +1,140 @@
+{% extends "about.html" %}
+{% block title %}Administration{% endblock %}
+{% block main %}
+  <main id="main">
+
+    <!-- ======= Our Team Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Administration</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Administration</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+    <!-- ======= Administrators ======= -->
+    <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="static/img/team/manager.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Msgr. Varghese Maruthoor</h4>
+                <span>Manager</span>
+                <p>I am much delighted to extend to you a warm welcome to new opportunities to success. We cannot always build the future of youth, but we can build our youth for their future. Sahyajyothi Arts and Science College is the first arts and science college started by the Malankara Catholic Archdiocese of Thiruvalla. We aspire to serve the higher educational aspirations of the people of the Highrange region.
+				            Emphasis is given for job oriented degree courses to the students in the socially and economically backward areas around Kumily so as to enable them to succeed in a scientific and technologically advanced world of today. At present the college operates seven undergraduate programmes and two Post Graduate programme affiliated to M.G University</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="static/img/team/principal.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Prof. Dr.M J Mathew</h4>
+                <span>Principal</span>
+                <p>Sahyajyothi Arts and Science College, Kumily primarily intends to nurture the shelved potential in indents providing an ideal platform for them to channelize their creative outbursts and lend expression to their thoughts and views on various aspects in serene manner.
+				        The purpose of education is to turn mirrors in to windows and on such is focused not only on pure studies but also on providing opportunity to each student to explore his or her own capabilities and their area of interest; curricular, co-curricular or extracurricular. We aim to develop soft skills that will equip them to manage and lead the varied opportunities and challenges of the society with an added edge.
+				        Knowledge is the most powerful tool for success. In the context of being familiar to the latest technical advances in various fields has become an extreme need of the hour..
+				        </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="static/img/team/viceprincipal.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Mr.Abraham K.M.</h4>
+                <span>Vice Principal</span>
+                <p>A college plays a big role in changing the society and its people in the sphere of academic, social, economic, mental, moral and physical development. Our college gives utmost care to students and give training to evolve good human beings, competent professionals and people to lead a successful and joyful life and thereby good citizens.
+				Education helps the students to develop critical skills like decision making, mental ability, problem solving and logical thinking. People face problems in their professions as well as personal lives. So the students must be equipped with prudence, problem solving and decision making mind. The college tries to lead the students in faith, tolerance and compassion to attain integrity and human wholeness. The Manager, Principal, Staff, Parents and Students try their best to accomplish the goals put forward. I am really glad to appreciate the Sahyajyothi Family and wish a grand success in all the endeavours it takes up.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+	<!-- Staff Section -->
+	<section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+        <div class="section-title">
+          <h2>STAFF</h2>
+        </div>
+		<div class="container">
+			<br><h4>TEACHING STAFF</h4>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th style="padding-right: 40px; padding-bottom: 20px;">SI NO</th>
+            <th style="padding-right: 170px; padding-bottom: 20px;">NAME</th>
+            <th style="padding-right: 150px; padding-bottom: 20px;">QUALIFICATION</th>
+            <th style="padding-right: 20px; padding-bottom: 20px;">ACADEMIC RANK</th>
+          </tr>
+          {% for x in teaching_staff %}
+          <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.name }}</td>
+            <td>{{ x.qualification }}</td>
+            <td>{{ x.academic_rank }}</td>
+          </tr>
+          {% endfor %}
+        
+        </table>
+      </div>
+      <br>
+	  </div>
+		<br>
+		<div class="container">
+			<br><h4>NON TEACHING STAFF</h4>
+      <div class="table-container">
+        <table>
+				<tr>
+					<th style="padding-right: 40px; padding-bottom: 20px;">SI NO</th>
+					<th style="padding-right: 170px; padding-bottom: 20px;">NAME</th>
+					<th style="padding-right: 150px; padding-bottom: 20px;">QUALIFICATION</th>
+					<th style="padding-right: 20px; padding-bottom: 20px;">ASSIGNED DUTY</th>
+        </tr>
+        {% for x in non_teaching_staff %}
+        <tr>
+          <td>{{ x.id }}</td>
+          <td>{{ x.name }}</td>
+          <td>{{ x.qualification }}</td>
+          <td>{{ x.assigned_duty }}</td>
+        </tr>
+        
+        {% endfor %}
+      
+      </table>
+    </div>
+    <br>
+  </div>	
+	</section>
+
+  </main><!-- End #main -->
+  {% endblock %}

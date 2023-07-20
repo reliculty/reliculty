@@ -1,0 +1,151 @@
+{% extends "about.html" %}
+{% block title %}PG Admission{% endblock %}
+{% block main %}
+  <main id="main">
+
+    <!-- ======= Contact Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>PG Admission</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>PG Admission</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+      <div class="container">
+        <div class="section-title">
+          <h2>PG Admission Form</h2>
+        </div>
+        <div class="row">
+
+			<form action="" method="post" role="form" class="php-email-form">
+			
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>1. Programme:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+					<select name="programme" class="form-control" id="programme" required>
+						<option value="null">Select</option>
+						<option value="eng">M.A. English</option>
+						<option value="finance">M.Com. F and T</option>
+					</select>
+                </div>
+              </div><br>
+			  
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>2. Please enter your Name:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+              </div><br>
+			  
+			  <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>3. Please enter your Email:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div><br>
+			  
+			  <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>4. Please enter your Phone Number:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="number" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" required>
+                </div>
+              </div><br>
+
+			  <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>5. Age & Date of Birth:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+					<span style="width: 46%; float: left;"><input type="number" class="form-control" name="age" id="age" placeholder="Your Age" required></span>
+					<span style="width: 46%; float: right;"><input type="text" class="form-control" name="dob" id="dob" placeholder="Your Date of Birth" required></span>
+                </div>
+              </div><br>
+			  
+			  <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>6. Gender & Marital Status:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+					<span style="width: 46%; float: left;"><select name="gender" class="form-control" id="gender" required>
+						<option value="null">Gender</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option></select>
+					</span>
+					<span style="width: 46%; float: right;"><select name="marital_status" class="form-control" id="marital_status" required>
+						<option value="null">Marital Status</option>
+						<option value="married">Married</option>
+						<option value="single">Single</option></select>
+					</span>
+                </div>
+              </div><br>
+			  
+			  <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>7. Details of Parent/Guardian:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+					<span style="width: 46%; float: left;"><input type="text" class="form-control" name="parent_name" id="parent_name" placeholder="Guardian/Parent Name" required></span>
+					<span style="width: 46%; float: right;"><input type="text" class="form-control" name="relationship" id="relationship" placeholder="Relationship to you" required></span>
+					<br><br>
+					<span style="width: 46%; float: left;"><input type="text" class="form-control" name="parent_occupation" id="parent_occupation" placeholder="Occupation" required></span>
+					<span style="width: 46%; float: right;"><input type="number" class="form-control" name="parent_income" id="parent_income" placeholder="Anual Income" required></span>					
+                </div>
+              </div><br>			  
+			  
+			  <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>8. Permanent Address:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+					<textarea class="form-control" name="permanent_address" rows="5" placeholder="Permanent Address" required></textarea>
+					<br>
+					<span style="width: 46%; float: left;"><input type="number" class="form-control" name="p_pincode" id="p_pincode" placeholder="PINCODE" required></span>
+					<span style="width: 46%; float: right;"><input type="number" class="form-control" name="p_contact" id="p_contact" placeholder="Contact No." required></span>				  
+                </div>
+              </div><br>
+			  
+			  <div class="row">
+                <div class="col-md-6 form-group">
+                  <p>9. Residential Address:</p>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+					<textarea class="form-control" name="residential_address" rows="5" placeholder="Residential Address"></textarea>
+					<br>
+					<span style="width: 46%; float: left;"><input type="number" class="form-control" name="r_pincode" id="r_pincode" placeholder="PINCODE" ></span>
+					<span style="width: 46%; float: right;"><input type="number" class="form-control" name="r_contact" id="r_contact" placeholder="Contact No." ></span>				  
+                </div>
+              </div><br>
+			  
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your details have been recorded. Thank you!</div>
+              </div>
+			  
+              <div class="text-center"><button type="submit">Submit</button></div>
+            </form>
+			
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+  </main><!-- End #main -->
+  {% endblock %}

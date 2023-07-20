@@ -1,0 +1,95 @@
+{% extends "about.html" %}
+{% block title %}Departments{% endblock %}
+{% block main %}
+
+<main id="main">
+
+    <!-- ======= Our Portfolio Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Department Details</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/departments">Departments</a></li>
+            <li>Management</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Portfolio Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+            <div class="section-title">
+            <h2>Department of Management</h2>
+          </div>
+          <div class="row gy-4">
+  
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+  
+                  <div class="swiper-slide">
+                    <img src="static/img/department/management.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h3>Department information</h3>
+                <ul>
+                  <li><strong>Department</strong>: Management</li>
+                  <li><strong>H.O.D</strong>: Mrs. Neenu Maria Thomas</li>
+                </ul>
+              </div>
+              <div class="portfolio-description">
+                  <h4>Programs Offered:</h4><br>
+                  <ul style="list-style-type:disc">
+                      <li>Bachelor of Business Administration (B.B.A.)</li>
+                  </ul>
+              </div>
+            </div>
+          </div><br>
+          <p>
+              The Department of Management is a crucial part of the academic sector that provides students with the knowledge and skills to become effective leaders and managers in various industries. This department typically offers undergraduate and postgraduate programs that cover a wide range of topics related to management, such as organizational behavior, human resource management, strategic planning, operations management, and entrepreneurship.
+          </p>
+          <p>
+              The curriculum of the Department of Management is designed to provide students with a solid understanding of the key principles and practices of effective management. Students are exposed to various theories and models of management, as well as the latest trends and practices in the industry. They also have the opportunity to gain practical experience through internships, case studies, and group projects.
+          </p>
+          <p>
+              The Department of Management is often closely linked with the business community, and many academic programs in this department have strong industry connections. This means that students may have access to guest lectures, networking events, and job opportunities through these connections.
+          </p>
+          <hr><br>
+          <div class="section-title">
+            <h2>Management Department Faculty</h2>
+          </div>
+          <div class="container"><br>
+            <div class="table-container">
+              <table>
+                <tr>
+                    <th style="padding-right: 100px; padding-bottom: 20px;">SI NO</th>
+                    <th style="padding-right: 210px; padding-bottom: 20px;">NAME OF THE TEACHER</th>
+                    <th style="padding-right: 170px; padding-bottom: 20px;">QUALIFICATION</th>
+
+                </tr>
+                {% for x in teaching_staff %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.qualification }}</td>					
+                </tr>				
+                {% endfor %}
+              </table>
+            </div><br>
+          </div>		
+        </div>
+      </section><!-- End Portfolio Details Section -->
+
+  </main>
+
+{% endblock %}

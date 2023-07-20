@@ -1,0 +1,95 @@
+{% extends "about.html" %}
+{% block title %}Departments{% endblock %}
+{% block main %}
+
+<main id="main">
+
+    <!-- ======= Our Portfolio Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Department Details</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/departments">Departments</a></li>
+            <li>Computer Science</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Portfolio Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+            <div class="section-title">
+            <h2>Department of Computer Science</h2>
+          </div>
+          <div class="row gy-4">
+  
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+  
+                  <div class="swiper-slide">
+                    <img src="static/img/department/computer.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h3>Department information</h3>
+                <ul>
+                  <li><strong>Department</strong>: Computer Science</li>
+                  <li><strong>H.O.D</strong>: Mr. Joju N.C.</li>
+                </ul>
+              </div>
+              <div class="portfolio-description">
+                  <h4>Programs Offered:</h4><br>
+                  <ul style="list-style-type:disc">
+                      <li>B.Sc. Computer Science</li>
+                  </ul>
+              </div>
+            </div>
+          </div><br>
+          <p>
+              The Department of Computer Science is an important part of the academic sector that offers students the opportunity to gain knowledge and skills in various areas of computer science, including programming, algorithms, software development, computer architecture, artificial intelligence, and data science.
+          </p>
+          <p>
+              The curriculum of the Department of Computer Science is designed to provide students with a comprehensive understanding of the theory and practice of computer science, as well as the latest trends and technologies in the industry. Students also have the opportunity to gain practical experience through projects, internships, and research opportunities, which can help them develop important skills highly valued by employers.
+          </p>
+          <p>
+              The Department of Computer Science is often closely linked with the technology industry, and many academic programs in this department have strong industry connections. This means that students may have access to guest lectures, networking events, and job opportunities through these connections.
+          </p>
+          <hr><br>
+          <div class="section-title">
+            <h2>Computer Science Department Faculty</h2>
+          </div>
+          <div class="container"><br>
+            <div class="table-container">
+              <table>
+                <tr>
+                    <th style="padding-right: 100px; padding-bottom: 20px;">SI NO</th>
+                    <th style="padding-right: 210px; padding-bottom: 20px;">NAME OF THE TEACHER</th>
+                    <th style="padding-right: 170px; padding-bottom: 20px;">QUALIFICATION</th>
+
+                </tr>
+                {% for x in teaching_staff %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.qualification }}</td>					
+                </tr>				
+                {% endfor %}
+              </table>
+            </div><br>
+          </div>		
+        </div>
+      </section><!-- End Portfolio Details Section -->
+
+  </main>
+
+{% endblock %}

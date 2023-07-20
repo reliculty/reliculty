@@ -1,0 +1,26 @@
+{% extends "update_teaching_staff.html" %}
+{% block title %}Update Programmes{% endblock %}
+{% block main %}
+<h2 class="text-center">Update Programmes</h2>
+<form name="programmes" method="POST" action="{{ url_for('views.update_record',table='programmes', id=record.id) }}">
+	<div class="form-group">
+		<label for="event-title">Programme:</label>
+		<input type="text" class="form-control" name="programme" placeholder="Enter Programme Name" value="{{ record.programme }}">
+	</div>
+	<div class="form-group">
+		<label for="event-title">Fees:</label>
+		<input type="text" class="form-control" name="fees" placeholder="Enter Fees" value="{{ record.fees }}">
+	</div>
+	<div class="form-group">
+		<label for="event-title">Graduation:</label>
+		<select class="form-control" name="graduation" value="{{ record.graduation }}">
+			<option value="Not Defined">⮛ Graduation</option>
+			<option value="UG" {% if record.graduation == 'UG' %}selected{% endif %}>UG</option>
+			<option value="PG" {% if record.graduation == 'PG' %}selected{% endif %}>PG</option>
+		</select>
+	</div>
+	<br>
+	<a href="{{ url_for('views.interface') }}"><button type="button">Cancel</button></a>
+	<button type="submit" name="programmes" class="btn btn-primary">Save Changes</button>
+</form>
+{% endblock %}

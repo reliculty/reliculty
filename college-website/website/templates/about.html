@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+  />
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+  />
+
+  <title>{% block title %}About Us{% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet">
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .table-container {
+      height: 300px; /* set the height of the container */
+      overflow: auto; /* add a scrollbar when content exceeds the container height */
+    }
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background-color: #f2f2f2;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td {
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="/index"><span style="width: 13%; float: left;"><img src="static/img/logo.png" alt="" class="img-fluid"></span><span style="width: 87%; float: right; color: skyblue">Sahyajyothi Arts & Science College, Kumily</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/index">Home</a></li>
+          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/administration">Administration</a></li>
+              <li><a href="/downloads">Downloads</a></li>
+              <li><a href="/nss">NSS</a></li>
+            </ul>
+          </li>
+		  <li><a href="/news">News & Events</a></li>
+          <li class="dropdown"><a href="#"><span>Academics</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/programmes">Programmes</a></li>
+              <li><a href="/departments">Departments</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Admission</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/ugadmission">UG Admissions</a></li>
+              <li><a href="/pgadmission">PG Admissions</a></li>
+              <li><a href="/fees">Fees Structure</a></li>
+            </ul>
+          </li>
+          <li><a href="/iqac">IQAC</a></li>
+          <li class="dropdown"><a href="#"><span>Logins</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/login">Login</a></li>
+            </ul>
+          </li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+
+  </header><!-- End Header -->
+
+  {% block main %}
+  <main id="main">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %} {% if category ==
+      'error' %}
+      <div class="alert alert-danger alter-dismissable fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% else %}
+      <div class="alert alert-success alter-dismissable fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endif %} {% endfor %} {% endif %} {% endwith %}
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>About Us</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>About Us</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="static/img/about.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h2>HISTORY</h2>
+            <p class="fst-italic">
+				Sahyajyothi Arts and Science College Kumily is the first arts and science college started by the Malankara Catholic Archdiocese of Thiruvalla. The College is affiliated to the Mahatma Gandhi University, Kottayam. It is ideally located inside the campus of St. Mary's Malankara Catholic Church at 1st Mile, Kumily. The college aspires to serve the higher educational aspirations of the people of the Highrange region. Our educational strategy emphasis job oriented degree courses to the aspiring students who are socially and economically backward, in and around Kumily. This enables them to cope up with the scientific and technological advancements of the contemporary competitive world.
+			</p>
+			<p>
+				The foundation stone for the college was laid on November 24, 2013 by the college patron Archbishop Most Rev. Dr. Thomas Mar Koorilos. The ceremony was blessed by the presence of most Rev. Dr. Philipose Mar stephanos, Bishop in-charge of Highrange region. College began with five under graduate courses affiliated to M.G. University and approved by the Govt. of Kerala in the academic year 2014-15.
+			</p>
+			<p>
+				His Grace Most Rev. Dr. Thomas Mar Koorilos, the Archbishop of Thiruvalla is the patron of the college. Rev. Fr. Philip Vattamattom is Founder Manager and Dr. Gigy Joseph was appointed First Principal in July 2014.The formal opening of the first batch started with a Schola Brevis programme on July 30th. Regular classes started on 4th August 2014. The college was formally inaugurated in a grand ceremony on 24th August 2014 by Sri. Oommen Chandy, the Chief Minister of Kerala. His Beatitude, Moran Mor Baselios Cardinal Cleemis, the Major Archbishop Catholicos of Syro Malankara Catholic Church presided over the inaugural ceremony.
+			</p>
+			<p>
+				At present the college operates seven under graduate programmes and two post graduate programme affiliated to Mahatma Gandhi University - B.Com Computer Application, B.Com Finance & Taxation, B.Com Co-operation, BA Communicative English, BBA, BSW, B.Sc. Computer Science, M.A English & M.Com Finance. Sahyajyothi college continues to ignite the dreams of the high ranges climbing the ladder of excellency every academic year.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section class="facts section-bg" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Departments</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="9" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Programmes</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="480" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Students</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="31" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Teachers</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Tetstimonials Section ======= -->
+    <section class="testimonials" data-aos="fade-up">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Tetstimonials</h2>
+         </div>
+
+        <div class="testimonials-carousel swiper">
+          <div class="swiper-wrapper">
+            <div class="testimonial-item swiper-slide">
+              <img src="static/img/testimonials/testimonials-1.png" class="testimonial-img" alt="">
+              <h3>His Beatitude Moran Mor Baselios Cardinal Cleemis</h3>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                This college is a tower of hope for the people, who search for knowledge and wisdom especially in the high range of Idukki District. The purpose of education is not simply acquiring some information; it is an initiation to astuteness and understanding. Faith in God and hard work will lead one to success. Education liberates them from all bondages and enables to reach the heights of life. Higher education has been inaccessible for the rural people everywhere. With the mission and vision of providing higher education to the people in villages, the Archdiocese of Thiruvalla started this college at Kumily.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+
+            <div class="testimonial-item swiper-slide">
+              <img src="static/img/testimonials/testimonials-2.png" class="testimonial-img" alt="">
+              <h3>His Grace Most Rev. Dr. Thomas Mar Koorilos</h3>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                We in Sahyajyothi strive to ensure essential skills for a successful career – intellectual competence, inquisitiveness and critical thinking; to teach true human values that would make learners charitable, hardworking and disciplined human beings; to build up strength of character, self respect, self confidence and farsightedness, and to provide necessary support and encouragement to the weak and the marginalized people of rural regions...
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+    
+  </main><!-- End #main -->
+  {% endblock %}
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/index">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/news">News & Events</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/ugadmission">Admission</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/login">Login</a></li>
+            </ul>
+          </div>
+
+          
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              	First Mile,<br>
+		Kumily (P.O),<br>
+		Idukki District,<br>
+		Kerala – 685509 <br><br>
+              <strong>Telephone:</strong>  04869 222085<br>
+              <strong>Phone:</strong>  +91 8111955105<br>
+              <strong>Email:</strong> sahyajyothicollege@gmail.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>About Sahyajyothi</h3>
+            <p>Sahyajyothi Arts and Science College Kumily, Idukki is the first arts and science college started by Malankara Catholic Archdiocese of Thiruvalla. The college aspires to serve higher educational aspirations to the people of Highrange region.</p>
+            <div class="social-links mt-3">
+              <a href="https://www.facebook.com/Sahyajyothi/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/sahyajyothi/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.youtube.com/@sahyajyothiartsandsciencec2658" class="youtube"><i class="bx bxl-youtube"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; 2023 <strong><span>SAHYAJYOTHI ARTS AND SCIENCE COLLEGE.</span></strong> All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="">Jonah Satheesh</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
+  <script>
+    const links = document.querySelectorAll('.page-link');
+    const pages = document.querySelectorAll('.page-content');
+    
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        // hide all pages
+        pages.forEach(page => {
+          page.classList.add('hidden');
+        });
+        
+        // show selected page
+        const pageId = link.getAttribute('href').substring(1);
+        const selectedPage = document.getElementById(pageId);
+        selectedPage.classList.remove('hidden');
+      });
+    });
+  </script>
+
+</body>
+
+</html>

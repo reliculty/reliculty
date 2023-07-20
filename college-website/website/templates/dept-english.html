@@ -1,0 +1,91 @@
+{% extends "about.html" %}
+{% block title %}Departments{% endblock %}
+{% block main %}
+
+<main id="main">
+
+    <!-- ======= Our Portfolio Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Department Details</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/departments">Departments</a></li>
+            <li>English & Journalism</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Portfolio Section -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+            <div class="section-title">
+            <h2>Department of English & Journalism</h2>
+          </div>
+          <div class="row gy-4">
+  
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                  <div class="swiper-wrapper align-items-center">
+  
+                      <div class="swiper-slide">
+                          <img src="static/img/department/english.jpg" alt="">
+                      </div>
+                  </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-4">
+              <div class="portfolio-info">
+                <h3>Department information</h3>
+                <ul>
+                  <li><strong>Department</strong>: English & Journalism</li>
+                  <li><strong>H.O.D</strong>: Mrs. Neethu Elsa Koshy</li>
+                </ul>
+              </div>
+              <div class="portfolio-description">
+                  <h4>Programs Offered:</h4><br>
+                  <ul style="list-style-type:disc">
+                      <li>B.A. English, Communication & Journalism (Model III)</li>
+                      <li>M.A. English Language & Literature</li>
+                  </ul>
+              </div>
+            </div>
+          </div><br>
+          <p>The Department of English and Journalism is a branch of academia that focuses on the study of language, literature, and media communication. It is a dynamic field that encompasses a wide range of topics such as literature, linguistics, creative writing, journalism, and media studies.</p>
+          <p>In the study of English, students are exposed to a range of literary genres such as poetry, drama, and fiction, and are encouraged to develop their analytical and critical thinking skills. They are also taught about the history of the English language, its grammar, and syntax.</p>
+          <p>In the study of Journalism, students learn how to write news articles, feature stories, and other forms of journalistic writing. They are taught how to conduct interviews, gather information, and verify sources. Journalism students also learn about the ethical and legal considerations involved in reporting news and disseminating information.</p>
+          <p>The Department of English and Journalism offers a diverse range of career opportunities for graduates. English majors can pursue careers in publishing, writing, advertising, education, and many other fields. Journalism graduates can work in traditional media such as newspapers, radio, and television, or in new media such as online news outlets and social media platforms.</p>
+          <hr><br>
+          <div class="section-title">
+            <h2>English & Journalism Department Faculty</h2>
+          </div>
+          <div class="container"><br>
+            <div class="table-container">
+              <table>
+                <tr>
+                    <th style="padding-right: 100px; padding-bottom: 20px;">SI NO</th>
+                    <th style="padding-right: 210px; padding-bottom: 20px;">NAME OF THE TEACHER</th>
+                    <th style="padding-right: 170px; padding-bottom: 20px;">QUALIFICATION</th>
+
+                </tr>
+                {% for x in teaching_staff %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.qualification }}</td>					
+                </tr>
+                {% endfor %}
+              </table>
+            </div><br>
+          </div>		
+        </div>
+      </section><!-- End Portfolio Details Section -->
+
+  </main>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "about.html" %}
+{% block title %}Fees Structure{% endblock %}
+{% block main %}
+  <main id="main">
+
+    <!-- ======= Our Team Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Fees Structure</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Fees Structure</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+	<section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+		<div class="container">
+			<div class="section-title">
+			<br><br><h2>UG Program Fees</h2>
+			</div>
+			<table>
+				<tr>
+					<th style="padding-right: 100px; padding-bottom: 20px;">SI NO</th>
+					<th style="padding-right: 170px; padding-bottom: 20px;">NAME OF THE PROGRAMME</th>
+					<th style="padding-right: 170px; padding-bottom: 20px;">FEES PER SEMESTER</th>
+
+				</tr>
+				{% for x in ugfees %}
+				<tr>
+					<td>{{ loop.index }}</td>
+					<td>{{ x.programme }}</td>
+					<td>{{ x.fees }}</td>
+				</tr>	
+				{% endfor %}	
+		</table>
+		<br><br>
+		</div>
+		<br>
+		<div class="container">
+			<div class="section-title">
+			<br><br><h2>PG Program Fees</h2>
+			</div>
+			<table>
+				<tr>
+					<th style="padding-right: 100px; padding-bottom: 20px;">SI NO</th>
+					<th style="padding-right: 170px; padding-bottom: 20px;">NAME OF THE PROGRAMME</th>
+					<th style="padding-right: 170px; padding-bottom: 20px;">FEES PER SEMESTER</th>
+				</tr>
+				{% for x in pgfees %}
+				<tr>
+					<td>{{ loop.index }}</td>
+					<td>{{ x.programme }}</td>
+					<td>{{ x.fees }}</td>
+				</tr>	
+				{% endfor %}			
+		</table>
+		<br><br>
+		</div>		
+	</section>
+
+  </main><!-- End #main -->
+  {% endblock %}

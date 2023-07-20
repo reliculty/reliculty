@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+  />
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+  />
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+
+  <title>Interface</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/style.css" rel="stylesheet">
+    <style>
+		.hidden {
+			display: none;
+		}
+		.form1 {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		
+		.input1[type="text"] {
+			margin: 5px;
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 30%;
+		}
+
+		.table-container {
+			height: 350px; /* set the height of the container */
+			overflow: auto; /* add a scrollbar when content exceeds the container height */
+		}
+
+		pre {
+		  height: 350px;
+		  overflow-y: scroll;
+		}
+	  
+		table {
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		.custom-btn {
+			background-color: #a3c8ca;
+			width: 100%;
+			text-align: left;
+		}
+	  
+		th {
+		  position: sticky;
+		  top: 0;
+		  background-color: #f2f2f2;
+		}
+	  
+		th,
+		td {
+		  padding: 8px;
+		  text-align: left;
+		  border-bottom: 1px solid #ddd;
+		}
+	  
+		td {
+		  max-width: 100px;
+		  overflow: hidden;
+		  text-overflow: ellipsis;
+		  white-space: nowrap;
+		}
+	  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo">
+        <h1 class="text-light"><a href="/index"><span style="width: 13%; float: left;"><img src="static/img/logo.png" alt="" class="img-fluid"></span><span style="width: 87%; float: right; color: skyblue">Sahyajyothi Arts & Science College, Kumily</span></a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/index">Home</a></li>
+          <li><a href="/logout">Logout</a></li>
+		  <li><a href="/sign-up">Register</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+  
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+	{% with messages = get_flashed_messages(with_categories=true) %} {% if
+		messages %} {% for category, message in messages %} {% if category ==
+		'error' %}
+		<div class="alert alert-danger alter-dismissable fade show" role="alert">
+		  {{ message }}
+		  <button type="button" class="close" data-dismiss="alert">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		{% else %}
+		<div class="alert alert-success alter-dismissable fade show" role="alert">
+		  {{ message }}
+		  <button type="button" class="close" data-dismiss="alert">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+	{% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <!-- ======= Blog Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Admin Interface</h2>
+
+          <ol>
+            <li><a href="/update_teaching_staff">Home</a></li>
+            <li>Admin Interface</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= BLOG ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+		<div class="row">
+
+			<div class="col-lg-9 entries">
+				<!-- ======= TEACHING STAFF ======= -->
+				<div id="page1" class="page-content">
+					<article class="entry">
+
+					<h2 class="entry-title">
+						Teaching Staff
+					</h2>
+
+					<div class="entry-content">
+						<pre>
+							<table>
+								<tr>
+									<th style="padding-right: 5px; padding-bottom: 20px;">SNO</th>
+									<th style="padding-right: 100px; padding-bottom: 20px;">NAME</th>
+									<th style="padding-right: 10px; padding-bottom: 20px;">QUALIFICATION</th>
+									<th style="padding-right: 10px; padding-bottom: 20px;">ACADEMIC RANK</th>
+									<th style="padding-right: 85px; padding-bottom: 20px;">DEPARTMENT</th>
+									<th style="padding-right: 10px; padding-bottom: 20px;">PHONE NUMBER</th>
+									<th style="padding-right: 30px; padding-bottom: 20px;"></th>
+									<th style="padding-right: 20px; padding-bottom: 20px;"></th>
+								</tr>
+								{% for x in teaching_staff %}
+								<tr>
+									<td>{{ loop.index }}</td>
+									<td>{{ x.name }}</td>
+									<td>{{ x.qualification }}</td>
+									<td>{{ x.academic_rank }}</td>
+									<td>{{ x.department }}</td>
+									<td>{{ x.phone }}</td>
+									<td><a href="{{ url_for('views.update_record',table='teaching_staff', id=x.id) }}"> <i class="bx bx-pencil"></i></a></td>
+									<td><a href="{{ url_for('views.delete_record',table_name='teaching_staff', id=x.id) }}"><i class="bx bx-trash"></i></a></td>
+								</tr>		
+								{% endfor %}
+							</table>
+						</pre>
+					<h5>Add new staff:</h5>	
+						<form name="teaching_staff" method="POST">
+							<div class="form-group">
+								<label for="event-title">Name:</label>
+								<input type="text" class="form-control" name="tname" placeholder="Enter Name" required>
+							</div>
+							<div class="form-group">
+								<label for="event-title">Qualification:</label>
+								<input type="text" class="form-control" name="tqualification" placeholder="Enter Qualification" required>
+							</div>
+							<div class="form-group">
+								<label for="event-title">Academic Rank:</label>
+								<select class="form-control" name="acadrank" >
+									<option value="Not Defined">⮛ Academic Rank</option>
+									<option value="Trainee">TRAINEE</option>
+									<option value="Lecturer">LECTURER</option>
+									<option value="Professor">PROFESSOR</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="event-title">Department:</label>
+								<select class="form-control" name="dept">
+									<option value="Not Defined">⮛ Select Department</option>
+									<option value="English & Journalism">English & Journalism</option>
+									<option value="Commerce">Commerce</option>
+									<option value="Malayalam">Malayalam</option>
+									<option value="Management">Management</option>
+									<option value="Social Work">Social Work</option>
+									<option value="Computer Science">Computer Science</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="event-title">Phone Number:</label>
+								<input type="text" class="form-control" name="phno1" placeholder="Enter Phone Number" required>
+							</div><br>
+							<button type="submit" name="teaching_staff" class="btn btn-primary">ADD NEW STAFF</button>
+						</form>
+					</div>
+					</article>
+				</div>	
+				<!-- page end -->	
+
+				<!-- ======= NON TEACHING STAFF ======= -->
+				<div id="page7" class="page-content hidden">
+					<article class="entry">
+
+						<h2 class="entry-title">
+						Non-Teaching Staff
+						</h2>
+
+						<div class="entry-content">
+						<pre style="height: 200px; overflow-y: scroll;">
+							<table>
+								<tr>
+									<th style="padding-right: 20px; padding-bottom: 20px;">SNO</th>
+									<th style="padding-right: 60px; padding-bottom: 20px;">NAME OF THE STAFF</th>
+									<th style="padding-right: 60px; padding-bottom: 20px;">QUALIFICATION</th>
+									<th style="padding-right: 30px; padding-bottom: 20px;">ASSIGNED DUTY</th>
+									<th style="padding-right: 20px; padding-bottom: 20px;">PHONE NUMBER</th>
+									<th style="padding-right: 30px; padding-bottom: 20px;"></th>
+									<th style="padding-right: 20px; padding-bottom: 20px;"></th>
+								</tr>
+								{% for x in non_teaching_staff %}
+								<tr>
+									<td>{{ loop.index }}</td>
+									<td>{{ x.name }}</td>
+									<td>{{ x.qualification }}</td>
+									<td>{{ x.assigned_duty }}</td>
+									<td>{{ x.phone }}</td>
+									<td><a href="{{ url_for('views.update_record',table='non_teaching_staff', id=x.id) }}"><i class="bx bx-pencil"></i></a></td>
+									<td><a href="{{ url_for('views.delete_record',table_name='non_teaching_staff', id=x.id) }}"><i class="bx bx-trash"></i></a></td>
+								</tr>			
+								{% endfor %}
+							</table>
+						</pre>
+						<h5>
+						Add new staff:</h5>	
+						<form method="POST" action=# name="non_teaching_staff">
+							<div class="form-group">
+								<label for="event-title">Name:</label>
+								<input type="text" class="form-control" name="sname" placeholder="Enter Name" required>
+							</div>
+							<div class="form-group">
+								<label for="event-title">Qualification:</label>
+								<input type="text" class="form-control" name="squalification" placeholder="Enter Qualification" required>
+							</div>
+							<div class="form-group">
+								<label for="event-title">Assigned Duty:</label>
+								<input type="text" class="form-control" name="duty" placeholder="Enter Assigned Duty" required>
+							</div>
+							<div class="form-group">
+								<label for="event-title">Phone Number:</label>
+								<input type="text" class="form-control" name="phno2" placeholder="Enter Phone Number" required>
+							</div><br>
+							<button type="submit" name="non_teaching_staff" class="btn btn-primary">ADD NEW STAFF</button>
+						</form>
+						</div>
+
+					</article>
+				</div>
+				<!-- page end -->
+				
+				<!-- ======= NEWS & EVENTS ======= -->
+				<div id="page2" class="page-content hidden">
+					<article class="entry">
+
+					<h2 class="entry-title">
+						NEWS & EVENTS
+					</h2>
+					<div class="entry-content">
+						<div class="table-container">
+							<section class="service-details">
+								<div class="container">
+									<div class="testimonials-carousel swiper">
+										<div class="swiper-wrapper">
+											<div class="testimonial-item swiper-slide">
+												<div class="row justify-content-center">
+													{% for x in events %}
+													{% if x.image_filename %}
+													<div class="col-md-6 d-flex" data-aos="fade-up">
+														<div class="card">
+														<div class="card-img">
+															<img src="{{ url_for('static', filename='img/events/' + x.image_filename) }}" alt="...">
+														</div>
+														<div class="card-body">
+															<h5 class="card-title">{{ x.event_title }}</h5>
+															<p class="card-text" style="font-size: 12px;">{{ x.event_description }}</p>
+															<div class="d-flex justify-content-between">
+																<div class="read-more"><a href="{{ url_for('views.delete_record',table_name='events', id=x.id) }}"><i class="bx bx-trash"></i> Delete</a></div>
+															</div>
+														</div>
+														</div>
+													</div>
+													{% endif %}
+													{% endfor %}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+						<br>
+						<h5>Add New Event</h5>
+						<form method="POST" action="#" name="events" enctype="multipart/form-data">
+							<div class="mb-3">
+								<label for="formFile" class="form-label">Choose an Image:</label>
+								<input class="form-control" type="file" id="event-image" name="event-image">
+							</div>
+						<div class="form-group">
+							<label for="event-title">Event Title:</label>
+							<input type="text" class="form-control" id="event-title" name="event-title" placeholder="Enter event title" required>
+						</div>
+						<div class="form-group">
+							<label for="event-description">Event Description:</label>
+							<textarea class="form-control" id="event-description" name="event-description" rows="5" placeholder="Enter event description" required></textarea>
+						</div>	
+						<button type="submit" name="events" class="btn btn-primary">Add Event</button>
+						</form>
+
+					</div>
+
+					</article>
+				</div>
+				<!-- page end -->
+				
+				<!-- ======= PROGRAMMES & FEES ======= -->
+				<div id="page4" class="page-content hidden">
+					<article class="entry">
+
+					<h2 class="entry-title">
+						Programmes & Fees
+					</h2>
+
+						<div class="entry-content">
+							<pre>
+								<table>
+									<tr>
+										<th style="padding-right: 40px; padding-bottom: 20px;">SI NO</th>
+										<th style="padding-right: 100px; padding-bottom: 20px;">NAME OF PROGRAMME</th>
+										<th style="padding-right: 70px; padding-bottom: 20px;">FEES PER SEMESTER</th>
+										<th style="padding-right: 30px; padding-bottom: 20px;">UG/PG</th>
+										<th style="padding-right: 40px; padding-bottom: 20px;"></th>
+										<th style="padding-right: 40px; padding-bottom: 20px;"></th>
+									</tr>
+									{% for x in programmes_fees %}
+									<tr>
+										<td>{{ loop.index }}</td>
+										<td>{{ x.programme }}</td>
+										<td>{{ x.fees }}</td>
+										<td>{{ x.graduation }}</td>
+										<td><a href="{{ url_for('views.update_record',table='programmes', id=x.id) }}"><i class="bx bx-pencil"></i></a></td>
+										<td><a href="{{ url_for('views.delete_record',table_name='programmes', id=x.id) }}"><i class="bx bx-trash"></i></a></td>
+									</tr>		
+									{% endfor %}
+								</table>					
+							</pre>
+							<h5>Add new programme fee:</h5>	
+							<form method="post" action=# name="programmes_fees">
+								<div class="row">
+									<div class="col-sm-4">
+									<input type="text" class="form-control" name="programme" placeholder="Programme Name">
+									</div>
+									<div class="col-sm-4">
+									<input type="number" class="form-control" name="fees" placeholder="Fee Amount">
+									</div>
+									<div class="col-sm-3">
+										<select class="form-control" name="graduation">
+										<option value="UG">UG</option>
+										<option value="PG">PG</option>
+										</select>
+									</div>
+								</div><br>
+								<div>
+									<button type="submit" name="programmes_fees" class="form-control btn btn-primary submit px-3">ADD NEW PROGRAMME</button>
+								</div>
+							</form>			
+						</div>
+					</article>
+				</div>
+				<!-- page end -->	
+
+				<!-- ======= DOWNLOADS ======= -->
+				<div id="page5" class="page-content hidden">
+					<article class="entry">
+
+					<h2 class="entry-title">
+						Downloadable Content
+					</h2>
+
+					<div class="entry-content">
+						<div class="table-container">
+							<section class="portfolio">
+								<div class="container">
+									<div class="testimonials-carousel swiper">
+										<div class="swiper-wrapper">
+											<div class="testimonial-item swiper-slide">
+												<div class="row justify-content-center">
+													{% for x in downloads %}
+													{% if x.file_name %}
+													<div class="col-lg-4 col-md-6 portfolio-wrap filter-web">
+														<div class="portfolio-item">
+														<img src="{{ url_for('static', filename='img/downloads/' + x.image_name) }}" class="img-fluid" alt="">
+														<div class="portfolio-info">
+															<div>
+															<a href="{{ url_for('static', filename='img/downloads/' + x.image_name) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="View Image"><i class="bx bx-fullscreen"></i></a>
+															<a href="{{ url_for('static', filename='img/downloads/' + x.file_name) }}" title="Download"><i class="bx bx-download"></i></a>
+															<a href="{{ url_for('views.delete_record',table_name='downloads', id=x.id) }}" title="Delete"><i class="bx bx-trash"></i></a>
+															</div>
+														</div>
+														</div>
+													</div>
+													{% endif %}
+													{% endfor %}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+						<br><br>
+						<h5>Add Downloadable Content:</h5>
+						<form method="POST" action="#" name="downloads" enctype="multipart/form-data">
+							<div class="mb-3">
+								<label for="formFile" class="form-label">Select Cover Image:</label>
+								<input class="form-control" type="file" id="image" name="image">
+							</div>
+							<div class="mb-3">
+								<label for="formFile" class="form-label">Choose the File:</label>
+								<input class="form-control" type="file" id="file" name="file">
+							</div>	
+							<div class="form-group">
+								<label for="event-title">Content Title:</label>
+								<input type="text" class="form-control" id="title" name="title" placeholder="Enter content title">
+							</div>
+						<button type="submit" name="downloads" class="btn btn-primary">Add Content</button>
+						</form>
+
+					</div>
+
+					</article>
+				</div>
+				<!-- page end -->
+
+				<!-- ======= IQAC ======= -->
+				<div id="page6" class="page-content hidden">
+					<article class="entry">
+
+					<h2 class="entry-title">
+						IQAC Members
+					</h2>
+
+					<div class="entry-content">
+						<pre>
+							<table>
+								<tr>
+									<th style="padding-right: 40px; padding-bottom: 20px;">SI NO</th>
+									<th style="padding-right: 100px; padding-bottom: 20px;">CATEGORY</th>
+									<th style="padding-right: 150px; padding-bottom: 20px;">NAME</th>
+									<th style="padding-right: 50px; padding-bottom: 20px;">DESIGNATION</th>
+									<th style="padding-right: 30px; padding-bottom: 20px;"></th>
+									<th style="padding-right: 30px; padding-bottom: 20px;"></th>
+								</tr>
+								{% for x in iqac %}
+								<tr>
+									<td>{{ loop.index }}</td>
+									<td>{{ x.category }}</td>
+									<td>{{ x.name }}</td>
+									<td>{{ x.designation }}</td>
+									<td><a href="{{ url_for('views.update_record',table='iqac', id=x.id) }}"><i class="bx bx-pencil"></i></a></td>
+									<td><a href="{{ url_for('views.delete_record',table_name='iqac', id=x.id) }}" title="Delete"><i class="bx bx-trash"></i></a></td>
+								</tr>		
+								{% endfor %}		
+							</table>					
+						</pre>
+					<h5>Add new member:</h5>
+						<form method="POST" action="#" name="iqac">
+							<div class="row">
+								<div class="col-sm-4">
+									<input type="text" class="form-control" name="name" placeholder="Enter Name">
+								</div>
+								<div class="col-sm-4">
+									<select class="form-control" name="category">
+										<option value="Not Defined">⮛ Choose Category</option>
+										<option value="General">General</option>
+										<option value="Management">Management</option>
+										<option value="Teacher">Teacher</option>
+										<option value="Student">Student</option>
+										<option value="Alumni">Alumni</option>
+										<option value="Office">Office</option>
+									</select>
+								</div>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" name="designation" placeholder="Provide Desgnation">
+								</div>
+							</div>	<br>
+							<div>
+								<button type="submit" name="iqac" class="form-control btn btn-primary submit px-3">ADD NEW MEMBER</button>
+							</div><br>
+						</form>
+					</div>
+					</article>
+				
+				</div>
+				<!-- page end -->	
+				
+				<!-- ======= CHANGE PASSWORD ======= -->
+				<div id="page3" class="page-content hidden">
+					<article class="entry">
+
+					<h2 class="entry-title">
+						Change Password
+					</h2>
+
+					<div class="entry-content">
+					<br>
+						<form method="post" action="{{ url_for('auth.change_password') }}" name="change_password">
+							<div class="form-group">
+								<label for="current_password">Old Password:</label>
+								<input type="password" class="form-control" id="current_password" name="current_password" required>
+							</div>
+							<div class="form-group">
+								<label for="new_password">New Password:</label>
+								<input type="password" class="form-control" id="new_password" name="new_password" required>
+							</div>
+							<div class="form-group">
+								<label for="confirm_password">Confirm Password:</label>
+								<input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+							</div>
+							<button type="submit" class="btn btn-primary">Change Password</button>
+						</form>
+
+					</div>
+
+					</article>
+				</div>
+				<!-- page end -->
+
+				<!-- ======= CHANGE PASSWORD ======= -->
+				<div id="page8" class="page-content hidden">
+					<article class="entry">
+
+					<h2 class="entry-title">
+						Messages
+					</h2>
+
+					<div class="entry-content">
+					<br>
+						<ul class="list-group">
+							{% for x in contact %}
+							<li class="list-group-item"><a class="btn btn-primary custom-btn" data-bs-toggle="collapse" href="#collapse{{ x.id }}" role="button" aria-expanded="false" aria-controls="collapseExample">{{ x.name }}: {{ x.subject }}</a></li>
+							<div class="collapse" id="collapse{{ x.id }}">
+								<div class="card card-body">
+									<p><strong>Name:</strong> {{ x.name }}</p>
+									<p><strong>Email:</strong> {{ x.email }}</p>
+									<p><strong>Message:</strong> {{ x.message }}</p>
+								</div>
+							</div>
+							{% endfor %}
+					  	</ul>
+
+					</div>
+
+					</article>
+				</div>
+				<!-- page end -->
+				
+			</div>
+
+			<div class="col-lg-3">
+
+				<div class="sidebar">
+					<h3 class="sidebar-title">Categories</h3>
+					<div class="sidebar-item categories">
+						<ul>
+							<li><a href="#page1" class="page-link">Teaching Staff </a></li>
+							<li><a href="#page7" class="page-link">Non Teaching Staff </a></li>
+							<li><a href="#page2" class="page-link">News & Events </a></li>
+							<li><a href="#page4" class="page-link">Programmes & Fees</a></li>
+							<li><a href="#page5" class="page-link">Downloadable Content</a></li>
+							<li><a href="#page6" class="page-link">IQAC</a></li>
+							<li><a href="#page8" class="page-link">Messages </a></li>
+							<li><a href="#page3" class="page-link">Change Password</a></li>
+						</ul>
+				</div>
+				</div>
+			</div>
+			</div>
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/index">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/news">News & Events</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/ugadmission">Admission</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/login">Login</a></li>
+            </ul>
+          </div>
+
+          
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              	First Mile,<br>
+		Kumily (P.O),<br>
+		Idukki District,<br>
+		Kerala – 685509 <br><br>
+              <strong>Telephone:</strong>  04869 222085<br>
+              <strong>Phone:</strong>  +91 8111955105<br>
+              <strong>Email:</strong> sahyajyothicollege@gmail.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <h3>About Sahyajyothi</h3>
+            <p>Sahyajyothi Arts and Science College Kumily, Idukki is the first arts and science college started by Malankara Catholic Archdiocese of Thiruvalla. The college aspires to serve higher educational aspirations to the people of Highrange region.</p>
+            <div class="social-links mt-3">
+              <a href="https://www.facebook.com/Sahyajyothi/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/sahyajyothi/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.youtube.com/@sahyajyothiartsandsciencec2658" class="youtube"><i class="bx bxl-youtube"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; 2023 <strong><span>SAHYAJYOTHI ARTS AND SCIENCE COLLEGE.</span></strong> All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="">Jonah Satheesh</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/vendor/aos/aos.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+    <script>
+      const links = document.querySelectorAll('.page-link');
+      const pages = document.querySelectorAll('.page-content');
+      
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          // hide all pages
+          pages.forEach(page => {
+            page.classList.add('hidden');
+          });
+          
+          // show selected page
+          const pageId = link.getAttribute('href').substring(1);
+          const selectedPage = document.getElementById(pageId);
+          selectedPage.classList.remove('hidden');
+        });
+      });
+    </script>
+</body>
+
+</html>

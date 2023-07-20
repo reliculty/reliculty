@@ -1,0 +1,29 @@
+{% extends "update_teaching_staff.html" %}
+{% block title %}Update IQAC{% endblock %}
+{% block main %}
+<h2 class="text-center">Update IQAC</h2>
+<form name="iqac" method="POST" action="{{ url_for('views.update_record',table='iqac', id=record.id) }}">
+	<div class="form-group">
+		<label for="event-title">Name:</label>
+		<input type="text" class="form-control" name="name" placeholder="Enter Name" value="{{ record.name }}">
+	</div>
+	<div class="form-group">
+		<label for="event-title">Category:</label>
+		<select class="form-control" name="category" value="{{ record.category }}">
+			<option value="Not Defined">⮛ Categories</option>
+			<option value="General" {% if record.category == 'General' %}selected{% endif %}>General</option>
+			<option value="Management" {% if record.category == 'Management' %}selected{% endif %}>Management</option>
+			<option value="Teacher" {% if record.category == 'Teacher' %}selected{% endif %}>Teacher</option>
+			<option value="Student" {% if record.category == 'Student' %}selected{% endif %}>Student</option>
+			<option value="Alumni" {% if record.category == 'Alumni' %}selected{% endif %}>Alumni</option>
+			<option value="Office" {% if record.category == 'Office' %}selected{% endif %}>Office</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="event-title">Designation:</label>
+		<input type="text" class="form-control" name="designation" placeholder="Enter Designation" value="{{ record.designation }}">
+	</div><br>
+	<a href="{{ url_for('views.interface') }}"><button type="button">Cancel</button></a>
+	<button type="submit" name="iqac" class="btn btn-primary">Save Changes</button>
+</form>
+{% endblock %}

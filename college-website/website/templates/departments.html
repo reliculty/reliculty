@@ -1,0 +1,120 @@
+{% extends "about.html" %}
+{% block title %}Departments{% endblock %}
+{% block main %}
+  <main id="main">
+	<div id="departments" class="page-content">
+	
+    <!-- ======= Our Portfolio Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Departments</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Departments</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Portfolio Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section class="portfolio">
+      <div class="container">
+		<div class="section-title">
+          <h2>Academic Departments</h2>
+		  <p style="padding-right: 100px; padding-left: 100px;">This list includes the full-fledged and allied academic departments of Sahyajyothi Arts & Science College offering both undergraduate and post-graduate degrees.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-main">Main</li>
+              <li data-filter=".filter-allied">Allied</li>
+            </ul>
+          </div>
+        </div>
+		
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-main">
+            <div class="portfolio-item">
+              <img src="static/img/department/english.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3>English & Journalism</h3>
+                <div>
+                  <a href="/dept-english" class="page-link" title="Department Details"><i class="bx bx-detail"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-main">
+            <div class="portfolio-item">
+              <img src="static/img/department/commerce.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3>Commerce</h3>
+                <div>
+                  <a href="/dept-commerce" class="page-link" title="Department Details"><i class="bx bx-detail"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-allied">
+            <div class="portfolio-item">
+              <img src="static/img/department/malayalam.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3>Malayalam</h3>
+                <div>
+                  <a href="/dept-malayalam" class="page-link" title="Department Details"><i class="bx bx-detail"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-main">
+            <div class="portfolio-item">
+              <img src="static/img/department/management.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3>Management</h3>
+                <div>
+                  <a href="/dept-management" class="page-link" title="Department Details"><i class="bx bx-detail"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-main">
+            <div class="portfolio-item">
+              <img src="static/img/department/social.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3>Social Work</h3>
+                <div>
+                  <a href="/dept-social" class="page-link" title="Department Details"><i class="bx bx-detail"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-main">
+            <div class="portfolio-item">
+              <img src="static/img/department/computer.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h3>Computer Science</h3>
+                <div>
+                  <a href="/dept-computer" class="page-link" title="Department Details"><i class="bx bx-detail"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+	</div>
+	
+  </main><!-- End #main -->
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "about.html" %}
+{% block title %}Programmes{% endblock %}
+{% block main %}
+  <main id="main">
+
+    <!-- ======= Our Team Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Programmes</h2>
+          <ol>
+            <li><a href="/index">Home</a></li>
+            <li>Programmes</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+	<section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+        <div class="section-title">
+          <h2>Programmes of Study</h2>
+		  <p style="padding-right: 100px; padding-left: 100px;">Sahyajyothi College offers 7 undergraduate programmes and 2 postgraduate programmes in various fields of study. The programs are designed to provide students with a well-rounded education, combining academic knowledge with practical skills and real-world experience. </p>
+        </div>
+		<div class="container">
+			<div class="table-container">
+				<br><br><h4>Under Graduate Programmes (Six Semesters)</h4><hr>
+				<table>
+					<tr>
+						<th style="padding-right: 100px; padding-bottom: 20px;">SI NO</th>
+						<th style="padding-right: 170px; padding-bottom: 20px;">NAME OF THE PROGRAMME</th>
+					</tr>
+					{% for x in ug_programmes_fees %}
+					<tr>
+						<td>{{ loop.index }}</td>
+						<td>{{ x.programme }}</td>
+					</tr>
+					{% endfor %}
+				</table><br><br>
+			</div>
+		</div>
+		<br>
+		<div class="container">
+			<div class="table-container">
+				<br><br><h4>Post Graduate Programmes (Four Semesters)</h4><hr>
+				<table>
+					<tr>
+						<th style="padding-right: 100px; padding-bottom: 20px;">SI NO</th>
+						<th style="padding-right: 170px; padding-bottom: 20px;">NAME OF THE PROGRAMME</th>
+					</tr>
+					{% for x in pg_programmes_fees %}
+					<tr>
+						<td>{{ loop.index }}</td>
+						<td>{{ x.programme }}</td>
+					</tr>
+					{% endfor %}
+					</tr>				
+				</table><br><br>
+			</div>
+		</div>		
+	</section>
+
+  </main><!-- End #main -->
+  {% endblock %}
