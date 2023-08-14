@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block content %}
+  <main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Register</h2>
+          <p>Welcome to Vanguard Funds Banking Website! Please create an account to continue!
+          </p>
+        </div>
+
+        <div class="row gx-lg-0 gy-4">
+
+          <div class="col-lg-4">
+
+            <div class="info-container d-flex flex-column align-items-center justify-content-center">
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h4>Location:</h4>
+                  <p>Vanguard Funds Corporation, Edapally, Kochi</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h4>Email:</h4>
+                  <p>customercare@vanguardfunds.in</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h4>Call:</h4>
+                  <p>04868-222 259</p>
+                </div>
+              </div><!-- End Info Item -->
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="{% url 'register' %}" method="post" role="form" class="php-email-forms">
+              {% csrf_token %}
+              <div class="form-group mt-3">
+                <label for="username" class="col-form-label">Username</label>
+                <input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
+              </div>
+              <div class="form-group mt-3">
+                <label for="password" class="col-form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password" style="padding: 12px 15px;" required>
+              </div>
+              <div class="form-group mt-3">
+                <label for="confirm-password" class="col-form-label">Confirm Password</label>
+                <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder="Confirm Password" style="padding: 12px 15px;" required>
+              </div>
+              <div class="row text-center" style="padding-top: 20px;">
+                <div class="col-md-6 form-group">
+                  <button type="submit">Register</button>
+                </div>
+                <div class="col-md-6 form-group">
+                  <a href="{% url 'login' %}"><button type="button" class="btn btn-primary button-hover green-button">Login</button></a><br>
+                  <label style="color: rgb(32, 96, 38); padding: 2px; font-size: 14px">Already Have an Account?</label>
+                </div>
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+  </main><!-- End #main -->
+
+  {% if passwords_dont_match %}
+  <script>
+    alert('Passwords do not match! Please Try Again!');
+  </script>
+  {% endif %}
+
+  {% if username_taken %}
+  <script>
+    alert('Username is Taken! Please Try a Different One!');
+  </script>
+  {% endif %}
+
+  {% endblock %}

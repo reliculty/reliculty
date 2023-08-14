@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Accounts Page
+{% endblock %}
+
+{% block content %}
+<main id="main">
+    <section id="contact" class="contact">
+
+        <div class="section-header">
+            <h2>Create Bank Account</h2>
+                <p>Welcome to Vanguard Funds Banking Website! Create a bank account to be a part of us!
+            </p>
+        </div>
+
+      <div class="container" data-aos="fade-up" style="max-width: 50%;">
+
+        <form action="{% url 'user' %}" class="php-email-forms" method="post" role="form">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+            <label for="dob" class="form-label">D.O.B:</label>
+            <input type="date" class="form-control input-box" id="dob" name="dob" required>
+            </div>
+            <div class="col">
+            <label for="age" class="form-label">Age:</label>
+            <input type="number" class="form-control input-box" id="age" name="age" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone:</label>
+            <input type="tel" class="form-control input-box" id="phone" name="phone">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gender:</label>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+            <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+            <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+            <label class="form-check-label" for="other">Other</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address:</label>
+            <textarea class="form-control" id="address" rows="3" name="address"></textarea>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+            <label for="district" class="form-label">District:</label>
+            <select class="form-select mb-3 input-box" id="district" name="district" onchange="updateBranches()">
+                <option value="">Select District</option>
+                <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                <option value="ernakulam">Ernakulam</option>
+                <option value="idukki">Idukki</option>
+                <option value="kozhikode">Kozhikode</option>
+                <option value="alappuzha">Alappuzha</option>
+            </select>
+            </div>
+            <div class="col">
+            <label for="branch" class="form-label">Branch:</label>
+            <select class="form-select input-box" id="branch" name="branch">
+                <option value="">Select Branch</option>
+            </select>
+            </div>
+
+            <!-- Javascript code for dynamic branch dropdown for each district -->
+            <script>
+                const branchLists = {
+                    thiruvananthapuram: ['Select Branch', 'Attingal', 'Balaramapuram', 'Chalai', 'Pattom', 'Varkala'],
+                    ernakulam: ['Select Branch', 'Aluva', 'Edapally', 'Kalady', 'Kolencherry', 'Thevara'],
+                    idukki: ['Select Branch','Anakkara', 'Kumily', 'Kuttikkanam', 'Kattappana', 'Puliyanmala'],
+                    kozhikode: ['Select Branch', 'Azhiyoor', 'Calicut', 'Kuttiadi', 'Mukkom', 'Vadkkara'],
+                    alappuzha: ['Select Branch', 'Aroor', 'Champakulam', 'Kavalam', 'Puliyoor', 'Vandanam']
+                };
+                
+                function updateBranches() {
+                    var districtSelect = document.getElementById("district");
+                    var branchSelect = document.getElementById("branch");
+                
+                    var selectedDistrict = districtSelect.value;
+                    var branches = branchLists[selectedDistrict] || [];
+                
+                    // Clear existing options
+                    while (branchSelect.firstChild) {
+                        branchSelect.removeChild(branchSelect.firstChild);
+                    }
+                
+                    // Add new options based on the branch list
+                    for (var i = 0; i < branches.length; i++) {
+                        var option = document.createElement("option");
+                        option.value = branches[i];
+                        option.textContent = branches[i];
+                        branchSelect.appendChild(option);
+                    }
+                }
+                </script>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Account Type:</label>
+            <select class="form-select input-box" id="account_type" name="account_type">
+            <option value="">Select Account Type</option>
+            <option value="Savings">Savings</option>
+            <option value="Current">Current</option>
+            <!-- Add more options here -->
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Materials Provided:</label>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="debitCard" name="debitCard" value="debitCard">
+            <label class="form-check-label" for="debitCard">Debit Card</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="creditCard" name="creditCard" value="creditCard">
+            <label class="form-check-label" for="creditCard">Credit Card</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="chequBook" name="chequBook" value="chequBook">
+            <label class="form-check-label" for="passBook">Cheque Book</label>
+            </div>
+        </div>
+        <div class="row text-center" style="padding-top: 20px;">
+            <div class="col-md-6 form-group">
+                <button type="submit" class="btn btn-primary" onclick="showCustomAlert()">Submit</button>
+            </div>
+            <div class="col-md-6 form-group">
+                <button type="reset" class="btn btn-primary button-hover green-button">Cancel</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </section>
+</main><!-- End #main -->
+<main id="main">
+    <div class="custom-alert" id="customAlert">
+        <div class="custom-alert-content">
+            <p>Application Accepted!<br>Thank You for being a part of us!</p>
+            <button class="btn btn-primary button-hover green-button" onclick="goBack()">Go back to site</button>
+        </div>
+    </div>
+</main>
+{{ registrationSuccess }}
+<script id="registration-success-script" data-registration-success="{{ registrationSuccess }}">
+
+    // Get the script element with the data attribute
+    const scriptElement = document.getElementById('registration-success-script');
+    // Get the value of the data attribute
+    const registrationSuccess = scriptElement.getAttribute('data-registration-success');
+
+    if (registrationSuccess) {
+      // Show the custom alert box if registration was successful
+      showCustomAlert();
+    }
+
+    function showCustomAlert() {
+      document.getElementById("customAlert").style.display = "flex";
+    }
+
+    function goBack() {
+      window.location.href = "{% url 'index' %}"; // Replace with your site URL
+    }
+</script>
+
+{% endblock %}

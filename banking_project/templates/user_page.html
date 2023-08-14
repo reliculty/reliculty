@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    User's Home Page
+{% endblock %}
+
+{% block content %}
+
+<section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row " data-aos="fade-in" style="padding-bottom: 100px; padding-top: 100px;">
+          <h2>Hello <span>{{ user.username }}</span>!</h2>
+          <p>Let's get you started by creating a new bank account.</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="{% url 'user' %}" class="btn-get-started">Create a Bank Account</a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
